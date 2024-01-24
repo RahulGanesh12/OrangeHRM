@@ -26,12 +26,12 @@ public class LoginPageTestCase extends BaseClass {
 	}
 
 	@Test(priority = 1)
-	public void loginTestCase() throws InterruptedException {
+	public void loginTestCase() throws InterruptedException, IOException {
 		homepage = login.verifyLogin(properties.getProperty("UserName"), properties.getProperty("Password"));
 	}
 
 	@Test(priority = 2)
-	public void loginTestCaseUsingKeyBoardOnly() throws InterruptedException {
+	public void loginTestCaseUsingKeyBoardOnly() throws InterruptedException, IOException {
 		homepage = login.verifyLoginUsingKeyBoardKeys(properties.getProperty("UserName"),
 				properties.getProperty("Password"));
 	}

@@ -14,7 +14,6 @@ import pageObjects.Login;
 public class ForgotPasswordPageTestCase extends BaseClass {
 
 	public ForgotPasswordPageTestCase() throws IOException {
-		super();
 	}
 
 	Login login;

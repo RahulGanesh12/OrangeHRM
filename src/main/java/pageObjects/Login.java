@@ -33,7 +33,7 @@ public class Login extends BaseClass {
 		return Logo.isDisplayed();
 	}
 
-	public HomePage verifyLogin(String userName, String password) throws InterruptedException {
+	public HomePage verifyLogin(String userName, String password) throws InterruptedException, IOException {
 		UserName.sendKeys(userName);
 		Thread.sleep(1000);
 		Password.sendKeys(password);
@@ -42,7 +42,8 @@ public class Login extends BaseClass {
 		return new HomePage();
 	}
 
-	public HomePage verifyLoginUsingKeyBoardKeys(String userName, String password) throws InterruptedException {
+	public HomePage verifyLoginUsingKeyBoardKeys(String userName, String password)
+			throws InterruptedException, IOException {
 		UserName.sendKeys(userName);
 		Thread.sleep(1000);
 		actions.keyDown(Keys.TAB).perform();
