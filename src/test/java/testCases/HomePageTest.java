@@ -23,7 +23,7 @@ public class HomePageTest extends BaseClass {
 	OrangeHRMSoftwarePage ohs;
 
 	@DataProvider
-	public Object[][] searchFunctionalityDataProvider() throws IOException {
+	public String[][] searchFunctionalityDataProvider() throws IOException {
 		return SearchPageDataProvider.searchPageValues();
 	}
 
@@ -36,25 +36,25 @@ public class HomePageTest extends BaseClass {
 		homepage = new HomePage();
 	}
 
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void verifyImageLogoTestCase() throws InterruptedException {
 		Assert.assertTrue(homepage.verifyLogoDisplayed());
 	}
 
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	public void verifyImageLeadsToSoftwarePageTestCase() throws InterruptedException {
 		ohs = homepage.verifyIfClickingLogoLeadsToSoftwarePage();
 		Assert.assertNotNull(ohs);
 	}
 
-//	@Test(priority = 3)
+	@Test(priority = 3)
 	public void verifyMenuButtonFunctionalityTestCase() throws InterruptedException {
 		Assert.assertTrue(homepage.verifyMenuButtonFunctionality());
 	}
 
-	@Test(priority = 1, dataProvider = "searchFunctionalityDataProvider")
+	@Test(priority = 4, dataProvider = "searchFunctionalityDataProvider")
 	public void verifySearchFunctionTestCase(String Values) throws InterruptedException {
-		Assert.assertTrue(homepage.verifySearchFunction(Values));
+		Assert.assertFalse(homepage.verifySearchFunction(Values));
 	}
 
 	@AfterMethod

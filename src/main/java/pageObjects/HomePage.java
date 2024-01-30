@@ -1,7 +1,6 @@
 package pageObjects;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -51,13 +50,13 @@ public class HomePage extends BaseClass {
 	}
 
 	public boolean verifySearchFunction(String InputValues) throws InterruptedException {
-		boolean status = false;
-		Thread.sleep(2000);
+		boolean status = true;
 		SearchOption.sendKeys(InputValues);
-		Thread.sleep(1000);
 		for (int i = 0; i < SideBarOptions.size(); i++) {
-			if (SideBarOptions.get(i).getText().equalsIgnoreCase(InputValues)) {
-				status = true;
+			Thread.sleep(1000);
+			String options = SideBarOptions.get(i).getText();
+			if (options.equalsIgnoreCase(InputValues)) {
+				status = false;
 				break;
 			}
 		}

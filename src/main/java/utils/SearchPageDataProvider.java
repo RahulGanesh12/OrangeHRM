@@ -13,6 +13,7 @@ public class SearchPageDataProvider {
 	public static String[][] searchPageValues() throws IOException {
 		FileInputStream file = new FileInputStream(
 				"C:\\Users\\Admin\\OneDrive\\Desktop\\JavaConcepts\\JavaCoding\\OrangeHRM\\TestData\\TestData.xlsx");
+		@SuppressWarnings("resource")
 		XSSFWorkbook xw = new XSSFWorkbook(file);
 		XSSFSheet xs = xw.getSheet("SearchOptions");
 		int LastRow = xs.getLastRowNum();
@@ -20,10 +21,11 @@ public class SearchPageDataProvider {
 		String[][] DataProviderValues = new String[LastRow + 1][LastColumn];
 		for (int i = 1; i <= LastRow; i++) {
 			XSSFRow xr = xs.getRow(i);
-			for (int j = 1; j < LastColumn; j++) {
+			for (int j = 0; j < LastColumn; j++) {
 				DataProviderValues[i][j] = xr.getCell(j).getStringCellValue();
 			}
 		}
 		return DataProviderValues;
 	}
+
 }

@@ -6,8 +6,11 @@
       <class name="testCases.HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifySearchFunctionTestCase" invocation-numbers="0"/>
+          <include name="verifySearchFunctionTestCase"/>
+          <include name="verifyMenuButtonFunctionalityTestCase"/>
           <include name="setUp"/>
+          <include name="verifyImageLogoTestCase"/>
+          <include name="verifyImageLeadsToSoftwarePageTestCase"/>
         </methods>
       </class> <!-- testCases.HomePageTest -->
     </classes>
